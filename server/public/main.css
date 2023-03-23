@@ -31,7 +31,7 @@ nav li {
 }
 
 .title {
-  width: 85px
+  /* width: 85px */
 }
 
 .menu {
@@ -44,3 +44,34 @@ body {
   margin: 0
 }
 
+footer {
+  background-color:#113551;;
+  width: 100vw;
+  height: 10vh;
+  border-top: 5px solid #0078c2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: white;
+  /* text-decoration: none; */
+}
+
+footer a:hover {
+  color: blue;
+}
+
+footer .title{
+  padding-right: 10px;
+}
+
+footer .info-div {
+  padding-left: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}
