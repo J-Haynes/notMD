@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 export interface FormData {
   primary: string
@@ -16,19 +16,40 @@ function Form({ onSubmit }: Props) {
     secondary: '',
     tertiary: '',
   })
+  const [valid, setValid] = useState(false)
 
-  const onChange = (evt: ChangeEvent<HTMLInputElement>) => {}
+  const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const onChangeValidate = (evt: ChangeEvent<HTMLInputElement>) => {
+    const val = evt.target.value
+    setValid(Boolean(val))
+    setFormData({ ...formData, primary: val })
+  }
+
+  const handleSubmit = (evt: FormEvent) => {
+    evt.preventDefault()
+    onSubmit(formData)
+  }
 
   return (
-    <form onSubmit={() => onSubmit(formData)}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="primary">Primary Symptom: </label>
-      <input type="text" name="primary" value={formData.primary} id="primary" />
+      <input
+        type="text"
+        name="primary"
+        value={formData.primary}
+        id="primary"
+        onChange={onChangeValidate}
+      />
       <label htmlFor="secondary">Secondary Symptom: </label>
       <input
         type="text"
         name="secondary"
         value={formData.secondary}
         id="secondary"
+        onChange={onChange}
       />
       <label htmlFor="tertiary">Tertiary Symptom: </label>
       <input
@@ -36,6 +57,7 @@ function Form({ onSubmit }: Props) {
         name="tertiary"
         value={formData.tertiary}
         id="tertiary"
+        onChange={onChange}
       />
       <button type="submit">Submit</button>
     </form>
