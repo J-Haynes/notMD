@@ -1,18 +1,17 @@
 import { useState } from 'react'
-
 import { getWordDone } from '../apiClient'
 
-// interface Words {
-//   affirmation: string
-// }
+interface AffirmationResponse {
+  affirmation: string
+}
 
 function Results() {
-  const [textState, setText] = useState('')
+  const [textState, setText] = useState<AffirmationResponse | undefined>()
+
   const clickHandler = () => {
     return getWordDone()
-      .then((obj) => {
-        console.log(obj)
-        setText(obj)
+      .then((response) => {
+        setText(response)
       })
       .catch((err) => {
         console.log('Err messages: ' + err)
