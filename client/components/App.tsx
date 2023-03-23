@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { getDiseases } from '../apiClient'
+import { getDiseases, getWordDone } from '../apiClient'
 import Articles from './Articles'
 import Body from './Body'
 import Footer from './Footer'
-import Form from './Form'
+import Form, { FormData } from './Form'
 import Nav from './Nav'
 import Other1 from './Other1'
 import Other2 from './Other2'
@@ -13,23 +13,25 @@ import Results from './Results'
 
 const App = () => {
   const [disease, setDiseases] = useState('')
-  const [count, setCount] = useState(0)
+  const [affirmation, setAffirmation] = useState('')
   const [isError, setIsError] = useState(false)
 
-  useEffect(() => {
-    if (count > 0) {
-      getDiseases()
-        .then((disease) => {
-          // console.log(disease)
-          setDiseases(disease)
-          setIsError(false)
-        })
-        .catch((err) => {
-          console.log(err)
-          setIsError(true)
-        })
-    }
-  }, [count])
+  const getFeedback = (symptoms: FormData) => {
+    getDiseases()
+      .then((disease) => {
+        setDiseases(disease)
+      })
+      .catch((err) => {
+        setIsError(true)
+      })
+    getWordDone()
+      .then((affirmation) => {
+        setAffirmation(affirmation)
+      })
+      .catch((err) => {
+        setIsError(true)
+      })
+  }
 
   return (
     <>
