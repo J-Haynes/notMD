@@ -17,22 +17,24 @@ const App = () => {
   const [isError, setIsError] = useState(false)
 
   useEffect(() => {
-    getDiseases()
-      .then((disease) => {
-        // console.log(disease)
-        setDiseases(disease)
-        setIsError(false)
-      })
-      .catch((err) => {
-        console.log(err)
-        setIsError(true)
-      })
+    if (count > 0) {
+      getDiseases()
+        .then((disease) => {
+          // console.log(disease)
+          setDiseases(disease)
+          setIsError(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          setIsError(true)
+        })
+    }
   }, [count])
 
   return (
     <>
       <Nav />
-      <h1>{disease}</h1>
+      {disease !== '' && <h1>{disease}</h1>}
       {isError && (
         <p style={{ color: 'red' }}>
           There was an error retrieving the greeting.
