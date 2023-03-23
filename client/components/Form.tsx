@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 export interface FormData {
   primary: string
@@ -16,26 +16,62 @@ function Form({ onSubmit }: Props) {
     secondary: '',
     tertiary: '',
   })
+  const [valid, setValid] = useState(false)
+
+  const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const onChangeValidate = (evt: ChangeEvent<HTMLInputElement>) => {
+    const val = evt.target.value
+    setValid(Boolean(val))
+    setFormData({ ...formData, primary: val })
+  }
+
+  const handleSubmit = (evt: FormEvent) => {
+    evt.preventDefault()
+    valid && onSubmit(formData)
+  }
 
   return (
-    <form onSubmit={() => onSubmit(formData)}>
-      <label htmlFor="primary">Primary Symptom: </label>
-      <input type="text" name="primary" value={formData.primary} id="primary" />
-      <label htmlFor="secondary">Secondary Symptom: </label>
-      <input
-        type="text"
-        name="secondary"
-        value={formData.secondary}
-        id="secondary"
-      />
-      <label htmlFor="tertiary">Tertiary Symptom: </label>
-      <input
-        type="text"
-        name="tertiary"
-        value={formData.tertiary}
-        id="tertiary"
-      />
-      <button type="submit">Submit</button>
+    <form onSubmit={handleSubmit}>
+      <div className={valid ? '' : 'invalid'}>
+        <label htmlFor="primary" className={valid ? '' : 'invalid'}>
+          Primary Symptom:{' '}
+        </label>
+        <input
+          type="text"
+          name="primary"
+          value={formData.primary}
+          id="primary"
+          onChange={onChangeValidate}
+          className={valid ? '' : 'invalid'}
+        />
+        {valid || <p className="invalid">Please enter at least one symptom</p>}
+      </div>
+      <div>
+        <label htmlFor="secondary">Secondary Symptom: </label>
+        <input
+          type="text"
+          name="secondary"
+          value={formData.secondary}
+          id="secondary"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="tertiary">Tertiary Symptom: </label>
+        <input
+          type="text"
+          name="tertiary"
+          value={formData.tertiary}
+          id="tertiary"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
     </form>
   )
 }
