@@ -1,15 +1,15 @@
 import { useState } from 'react'
 
-import { getWords } from '../api/affirmationApi'
+import { getWordDone } from '../apiClient'
 
-interface Words {
-  affirmation: string
-}
+// interface Words {
+//   affirmation: string
+// }
 
 function Results() {
-  const [textState, setText] = useState(null as Words | null)
+  const [textState, setText] = useState('')
   const clickHandler = () => {
-    return getWords()
+    return getWordDone()
       .then((obj) => {
         console.log(obj)
         setText(obj)
