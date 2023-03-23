@@ -5,20 +5,22 @@ function Articles() {
         <div className="column">
           <img
             src="/images/photo2.avif"
-            alt="Man with gloves typing on keyboard"
+            alt="Man coughing and holding hand up"
           />
-          <p>Text about the photo</p>
+          <p>Slow caching causing burping endemic among IT industry. </p>
         </div>
         <div className="column">
           <img
             src="/images/photo1.avif"
-            alt="Man coughing and holding hand up"
+            alt="Man with gloves typing on keyboard"
           />
-          <p>Text about the photo</p>
+          <p>
+            Codemorphisis on the rise in people who programme with gloves on.
+          </p>
         </div>
         <div className="column">
           <img src="/images/photo3.avif" alt="Man holding up bunch of hair" />
-          <p>Text about the photo</p>
+          <p>Common forms of hair loss linked to using React.</p>
         </div>
       </div>
     </>
