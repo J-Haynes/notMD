@@ -2,6 +2,7 @@ import { join } from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
 
+
 const server = express()
 
 server.use(express.json())
