@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getGreeting } from '../apiClient'
+import { getDiseases } from '../apiClient'
 import Articles from './Articles'
 import Body from './Body'
 import Footer from './Footer'
@@ -12,15 +12,15 @@ import Other4 from './Other4'
 import Results from './Results'
 
 const App = () => {
-  const [greeting, setGreeting] = useState('')
+  const [disease, setDiseases] = useState('')
   const [count, setCount] = useState(0)
   const [isError, setIsError] = useState(false)
 
   useEffect(() => {
-    getGreeting()
-      .then((greeting) => {
-        console.log(greeting)
-        setGreeting(greeting)
+    getDiseases()
+      .then((disease) => {
+        // console.log(disease)
+        setDiseases(disease)
         setIsError(false)
       })
       .catch((err) => {
@@ -35,7 +35,7 @@ const App = () => {
       <body></body>
       <h1>hi mom!</h1>
       {count}
-      <h1>{greeting}</h1>
+      <h1>{disease}</h1>
       {isError && (
         <p style={{ color: 'red' }}>
           There was an error retrieving the greeting.
