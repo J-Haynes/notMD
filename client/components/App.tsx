@@ -56,6 +56,16 @@ const App = () => {
         </p>
       )}
       <button onClick={() => setCount(count + 1)}>Click</button>
+      <Nav />
+      <Body />
+      <Footer />
+      <Form />
+      <Articles />
+      <Results />
+      <Other1 />
+      <Other2 />
+      <Other3 />
+      <Other4 />
     </>
   )
 }
