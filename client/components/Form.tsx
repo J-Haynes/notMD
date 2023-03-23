@@ -30,36 +30,48 @@ function Form({ onSubmit }: Props) {
 
   const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault()
-    onSubmit(formData)
+    valid && onSubmit(formData)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="primary">Primary Symptom: </label>
-      <input
-        type="text"
-        name="primary"
-        value={formData.primary}
-        id="primary"
-        onChange={onChangeValidate}
-      />
-      <label htmlFor="secondary">Secondary Symptom: </label>
-      <input
-        type="text"
-        name="secondary"
-        value={formData.secondary}
-        id="secondary"
-        onChange={onChange}
-      />
-      <label htmlFor="tertiary">Tertiary Symptom: </label>
-      <input
-        type="text"
-        name="tertiary"
-        value={formData.tertiary}
-        id="tertiary"
-        onChange={onChange}
-      />
-      <button type="submit">Submit</button>
+      <div>
+        <label htmlFor="primary" className={valid ? '' : 'invalid'}>
+          Primary Symptom:{' '}
+        </label>
+        <input
+          type="text"
+          name="primary"
+          value={formData.primary}
+          id="primary"
+          onChange={onChangeValidate}
+          className={valid ? '' : 'invalid'}
+        />
+        {valid || <p className="invalid">Please enter at least one symptom</p>}
+      </div>
+      <div>
+        <label htmlFor="secondary">Secondary Symptom: </label>
+        <input
+          type="text"
+          name="secondary"
+          value={formData.secondary}
+          id="secondary"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="tertiary">Tertiary Symptom: </label>
+        <input
+          type="text"
+          name="tertiary"
+          value={formData.tertiary}
+          id="tertiary"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
     </form>
   )
 }
