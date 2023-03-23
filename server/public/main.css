@@ -80,6 +80,8 @@ form {
   height: 500px;
   display: flex;
   max-width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   height: 50vh
 }
 
