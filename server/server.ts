@@ -8,11 +8,22 @@ server.use(express.json())
 server.use(express.static(join(__dirname, './public')))
 server.use(cors('*' as CorsOptions))
 
-server.get('/greeting', (req, res) => {
-  const greetings = ['fake disease 1', 'fake disease 2', 'fake disease 3']
-  const index = Math.floor(Math.random() * greetings.length)
+server.get('/diseases', (req, res) => {
+  const diseases = [
+    `Queen's Lady Plague`,
+    `Idiopathic Adolescent Acute Neurodegeneration`,
+    `Hemoglophagia`,
+    `Cutie Pox`,
+    `Diminished Gluteal Syndrome`,
+    `Head-go-boom-boom-itis`,
+    `Spontaneous Dental Hydroplosion`,
+    `Xenopolycythemia`,
+    `The Filth`,
+    `Unicornitis`,
+  ]
+  const index = Math.floor(Math.random() * diseases.length)
   console.log(index)
-  res.json({ greeting: greetings[index] })
+  res.json({ disease: diseases[index] })
 })
 
 export default server
