@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 export interface FormData {
   primary: string
@@ -16,6 +16,8 @@ function Form({ onSubmit }: Props) {
     secondary: '',
     tertiary: '',
   })
+
+  const onChange = (evt: ChangeEvent<HTMLInputElement>) => {}
 
   return (
     <form onSubmit={() => onSubmit(formData)}>
