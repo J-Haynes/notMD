@@ -35,6 +35,7 @@ function Form({ onSubmit }: Props) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <img src="/images/funny-hand.jpg" alt="hand-haha" />
       <div className="form-div">
         <div className={valid ? '' : 'invalid'}>
           <label htmlFor="primary" className={valid ? '' : 'invalid'}>
@@ -49,7 +50,7 @@ function Form({ onSubmit }: Props) {
             className={valid ? '' : 'invalid'}
           />
           {valid || (
-            <p className="invalid">Please enter at least one symptom</p>
+            <p className="invalid red">Please enter at least one symptom</p>
           )}
         </div>
         <div>
@@ -73,10 +74,11 @@ function Form({ onSubmit }: Props) {
           />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button className="button-18" type="submit">
+            Submit
+          </button>
         </div>
       </div>
-      <img src="/images/funny-hand.jpg" alt="hand-haha" />
     </form>
   )
 }
