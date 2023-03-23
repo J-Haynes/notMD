@@ -1,7 +1,7 @@
 import { join } from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
-
+import request from 'superagent'
 
 const server = express()
 
@@ -27,6 +27,17 @@ server.get('/diseases', (req, res) => {
   res.json({ disease: diseases[index] })
 })
 
-server.get('/conditions', (req, res) => {})
+server.get('/affirmations', (req, res) => {
+  request
+    .get('https://www.affirmations.dev/')
+    .then((response) => {
+      res.header('Access-Control-Allow-Origin', '*')
+      res.json({ affirmation: response.body.affirmation })
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500).json({ error: 'Failed to fetch affirmation' })
+    })
+})
 
 export default server
