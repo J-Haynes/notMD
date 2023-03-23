@@ -35,42 +35,49 @@ function Form({ onSubmit }: Props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className={valid ? '' : 'invalid'}>
-        <label htmlFor="primary" className={valid ? '' : 'invalid'}>
-          Primary Symptom:{' '}
-        </label>
-        <input
-          type="text"
-          name="primary"
-          value={formData.primary}
-          id="primary"
-          onChange={onChangeValidate}
-          className={valid ? '' : 'invalid'}
-        />
-        {valid || <p className="invalid">Please enter at least one symptom</p>}
-      </div>
-      <div>
-        <label htmlFor="secondary">Secondary Symptom: </label>
-        <input
-          type="text"
-          name="secondary"
-          value={formData.secondary}
-          id="secondary"
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="tertiary">Tertiary Symptom: </label>
-        <input
-          type="text"
-          name="tertiary"
-          value={formData.tertiary}
-          id="tertiary"
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
+      <img src="/images/funny-hand.jpg" alt="hand-haha" />
+      <div className="form-div">
+        <div className={valid ? '' : 'invalid'}>
+          <label htmlFor="primary" className={valid ? '' : 'invalid'}>
+            Primary Symptom:{' '}
+          </label>
+          <input
+            type="text"
+            name="primary"
+            value={formData.primary}
+            id="primary"
+            onChange={onChangeValidate}
+            className={valid ? '' : 'invalid'}
+          />
+          {valid || (
+            <p className="invalid red">Please enter at least one symptom</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="secondary">Secondary Symptom: </label>
+          <input
+            type="text"
+            name="secondary"
+            value={formData.secondary}
+            id="secondary"
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="tertiary">Tertiary Symptom: </label>
+          <input
+            type="text"
+            name="tertiary"
+            value={formData.tertiary}
+            id="tertiary"
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <button className="button-18" type="submit">
+            Submit
+          </button>
+        </div>
       </div>
     </form>
   )
