@@ -1,29 +1,33 @@
-* {
+body {
   font-family: 'Merriweather', serif;
-  background-color: blue;
-  color: #ffffff;
-  text-decoration: none;
+  background-color: ffffff;
+  color: #000000;
 }
 
 nav {
   display: flex;
   /* padding-bottom: 100px; */
   flex-direction: row;
-  max-height: 10vh;
+  max-height: 7vh;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #113551;
+  color: #ffffff;
 }
 
 nav ul {
   display: flex;
   text-decoration: none;
-
+  align-items: center;
 }
 
 nav li {
-  text-decoration: none;
+  list-style-type: none;
+  text-align: center;
 }
 
-.search {
-  
+#search-icon {
+  max-height: 4vh;
 }
 
 .title {
@@ -32,5 +36,11 @@ nav li {
 
 .menu {
   display: flex;
+  text-decoration: none;
   flex-direction: row;
 }
+
+body {
+  margin: 0
+}
+
