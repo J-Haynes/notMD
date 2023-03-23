@@ -35,7 +35,7 @@ function Form({ onSubmit }: Props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className={valid ? '' : 'invalid'}>
         <label htmlFor="primary" className={valid ? '' : 'invalid'}>
           Primary Symptom:{' '}
         </label>
