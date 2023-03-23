@@ -42,7 +42,6 @@ const App = () => {
       )}
       <button onClick={() => setCount(count + 1)}>Generate Diseases</button>
       <Body />
-      <Footer />
       <Form />
       <Articles />
       <Results />
@@ -50,6 +49,7 @@ const App = () => {
       <Other2 />
       <Other3 />
       <Other4 />
+      <Footer />
     </>
   )
 }
