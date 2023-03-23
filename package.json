@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "client": "webpack serve --config ./client/webpack.config.js --hot",
-    "dev": "run-p dev:client:watch dev:server",
+    "dev": "run-p client:watch server:watch",
     "client:watch": "npm run webpack -- --watch",
     "server:watch": "nodemon server/index.ts",
     "start": "ts-node server/index.ts",
