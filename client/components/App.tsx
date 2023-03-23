@@ -26,7 +26,7 @@ const App = () => {
       })
     getWordDone()
       .then((affirmation) => {
-        setAffirmation(affirmation)
+        setAffirmation(affirmation.affirmation)
       })
       .catch((err) => {
         setIsError(true)
