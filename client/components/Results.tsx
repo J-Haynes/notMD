@@ -22,7 +22,7 @@ function Results() {
   return (
     <>
       <div>
-        <button onClick={clickHandler}>Get Character</button>
+        <button onClick={clickHandler}>Get Feedback</button>
         <h2>{textState?.affirmation}</h2>
       </div>
     </>
