@@ -26,4 +26,6 @@ server.get('/diseases', (req, res) => {
   res.json({ disease: diseases[index] })
 })
 
+server.get('/conditions', (req, res) => {})
+
 export default server
