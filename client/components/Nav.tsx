@@ -9,18 +9,23 @@ function Nav() {
               <strong>MD</strong>
             </h1>
           </div>
-          <div className="menu">
-            <ul>
-              <li>Home</li>
-              <li>Conditions</li>
-              <li>Drugs & Supplements</li>
-              <li>Well-Being</li>
-              <li>Symptom Checker</li>
-              <li>Find a Doctor</li>
-              <li>More</li>
-              <li>Privacy & More</li>
-            </ul>
-          </div>
+          <p>Home</p>
+          <p>Conditions</p>
+          <p>
+            Drugs & <br />
+            Supplements
+          </p>
+          <p>Well-Being</p>
+          <p>
+            Symptom <br />
+            Checker
+          </p>
+          <p>
+            Find a <br />
+            Doctor
+          </p>
+          <p>More</p>
+          <p>Privacy & More</p>
           <div className="search">
             <img id="search-icon" src="/images/search.svg" alt="search icon" />
           </div>
