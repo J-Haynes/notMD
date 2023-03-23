@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react'
 import { getGreeting } from '../apiClient'
+import Articles from './Articles'
+import Body from './Body'
+import Footer from './Footer'
+import Form from './Form'
+import Nav from './Nav'
+import Other1 from './Other1'
+import Other2 from './Other2'
+import Other3 from './Other3'
+import Other4 from './Other4'
+import Results from './Results'
 
 const App = () => {
   const [greeting, setGreeting] = useState('')
