@@ -32,16 +32,13 @@ const App = () => {
   return (
     <>
       <Nav />
-      <body></body>
-      <h1>hi mom!</h1>
-      {count}
       <h1>{disease}</h1>
       {isError && (
         <p style={{ color: 'red' }}>
           There was an error retrieving the greeting.
         </p>
       )}
-      <button onClick={() => setCount(count + 1)}>Click</button>
+      <button onClick={() => setCount(count + 1)}>Generate Diseases</button>
       <Body />
       <Footer />
       <Form />
