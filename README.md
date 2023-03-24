@@ -1,6 +1,26 @@
 # Boilerplate: React with Webpack
 This is a starter project that uses webpack to transpile and bundle ES6 React code. 
 
+## API Documentation
+
+### `/diseases`
+
+GET'ing `/diseases` returns a random disease in the following format
+```ts
+interface {
+  disease: string
+}
+```
+
+### `/affirmations`
+
+GET'ing `/affirmations` makes a request to `https://www.affirmations.dev/`, and returns the resulting affermation in the following format:
+```ts
+interface {
+  affirmation: string
+}
+```
+
 ## Setup
 
 ### Installation
