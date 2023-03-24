@@ -6,6 +6,8 @@ import Footer from './Footer'
 import Form, { FormData } from './Form'
 import Nav from './Nav'
 import Results from './Results'
+import Supplements from './Supplements'
+import Conditions from './Conditions'
 
 const App = () => {
   const [disease, setDiseases] = useState('')
@@ -59,6 +61,8 @@ const App = () => {
             />
           }
         />
+        <Route path="/supplements" element={<Supplements />} />
+        <Route path="/conditions" element={<Conditions />} />
       </Routes>
       <Articles />
       <Footer />

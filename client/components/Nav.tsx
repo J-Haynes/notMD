@@ -13,11 +13,11 @@ function Nav() {
           </NavLink>
         </div>
         <NavLink to="/">Home</NavLink>
-        <p>Conditions</p>
-        <p>
+        <NavLink to="/conditions">Conditions</NavLink>
+        <NavLink to="/supplements">
           Drugs & <br />
           Supplements
-        </p>
+        </NavLink>
         <p>Well-Being</p>
         <p>
           Symptom <br />

@@ -1,7 +1,7 @@
 export default function Supplements() {
   return (
     <div style={{ width: '500px', margin: '0 auto' }}>
-      <div className="column">
+      <div>
         <h2>
           Boost your health and wellness with our essential supplements, packed
           with vitamins and minerals to support your body&apos; s peak
