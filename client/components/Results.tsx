@@ -1,27 +1,16 @@
-import { useState, useEffect } from 'react'
-import { getWordDone } from '../apiClient'
-
-interface AffirmationResponse {
+interface Props {
+  disease: string
   affirmation: string
+  onReset: () => void
 }
 
-export default function Results() {
-  const [textState, setText] = useState<AffirmationResponse | undefined>()
-
-  useEffect(() => {
-    getWordDone()
-      .then((response) => {
-        setText(response)
-      })
-      .catch((err) => {
-        console.log('Err messages: ' + err)
-      })
-  }, [])
-
+export default function Results({ disease, affirmation, onReset }: Props) {
   return (
     <>
       <div>
-        <h2>{textState?.affirmation}</h2>
+        <h2>You have {disease}.</h2>
+        <p>{affirmation}</p>
+        <button onClick={onReset}>Get a new diagnosis</button>
       </div>
     </>
   )
