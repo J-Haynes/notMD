@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import { getDiseases, getWordDone } from '../apiClient'
 import Articles from './Articles'
 import Footer from './Footer'
@@ -10,6 +11,7 @@ const App = () => {
   const [disease, setDiseases] = useState('')
   const [affirmation, setAffirmation] = useState('')
   const [isError, setIsError] = useState(false)
+  const nav = useNavigate()
 
   const getFeedback = (symptoms: FormData) => {
     getDiseases()
@@ -28,11 +30,13 @@ const App = () => {
         console.log(err.message)
         setIsError(true)
       })
+    nav('/result')
   }
 
   const clearFeedback = () => {
     setAffirmation('')
     setDiseases('')
+    nav('/')
   }
 
   return (
@@ -43,16 +47,19 @@ const App = () => {
           There was an error retrieving some information.
         </p>
       )}
-      {disease && affirmation ? (
-        <Results
-          disease={disease}
-          affirmation={affirmation}
-          onReset={clearFeedback}
+      <Routes>
+        <Route path="/" element={<Form onSubmit={getFeedback} />} />
+        <Route
+          path="/result"
+          element={
+            <Results
+              disease={disease}
+              affirmation={affirmation}
+              onReset={clearFeedback}
+            />
+          }
         />
-      ) : (
-        <Form onSubmit={getFeedback} />
-      )}
-
+      </Routes>
       <Articles />
       <Footer />
     </>
