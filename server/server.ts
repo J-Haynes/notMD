@@ -21,6 +21,18 @@ server.get('/diseases', (req, res) => {
     `Xenopolycythemia`,
     `The Filth`,
     `Unicornitis`,
+    `Cooties`,
+    `Konebogetvirus`,
+    `Lycanthropy`,
+    `Spattergroit`,
+    `Malignalitaloptereosis`,
+    `Synaptic Seepage`,
+    `Wexler's Curtain`,
+    `Amoria Phlebitis`,
+    `Condiment Dysfunction`,
+    `The Suds`,
+    `Tooba-Achoobas`,
+    `Rotten World Gas`,
   ]
   const index = Math.floor(Math.random() * diseases.length)
   console.log(index)
