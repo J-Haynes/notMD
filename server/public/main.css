@@ -149,6 +149,25 @@ form input {
   margin-bottom: 5vh
 }
 
+.disease {
+  text-align: center;
+}
+
+.affirmation {
+  text-align: center;
+}
+
+.results-div {
+  height: 41vh;
+}
+
+.result-button-div {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 100px;
+}
+
 .button-18 {
   align-items: center;
   background-color: #0A66C2;
@@ -194,3 +213,4 @@ form input {
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
 }
+
