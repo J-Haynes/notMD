@@ -15,6 +15,14 @@ nav {
   color: #ffffff;
 }
 
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #0078c2;
+}
+
 nav ul {
   display: flex;
   text-decoration: none;
@@ -213,3 +221,12 @@ form input {
   color: rgba(0, 0, 0, .3);
 }
 
+.width {
+  width: 60vw;
+  padding-top: 5vw;
+  margin:auto;
+}
+
+.width h1 {
+  text-align: center;
+}
