@@ -15,6 +15,7 @@ const App = () => {
   const [disease, setDiseases] = useState('')
   const [affirmation, setAffirmation] = useState('')
   const [isError, setIsError] = useState(false)
+  const [showResult, setShowResult] = useState(false)
 
   const getFeedback = (symptoms: FormData) => {
     getDiseases()
@@ -33,20 +34,26 @@ const App = () => {
       })
   }
 
+  const clickHandler = () => {
+    setShowResult(true)
+    setCount(count + 1)
+  }
+
   return (
     <>
       <Nav />
       {disease !== '' && <h1>{disease}</h1>}
+      {showResult && <Results />}
       {isError && (
         <p style={{ color: 'red' }}>
           There was an error retrieving the greeting.
         </p>
       )}
-      <button onClick={() => setCount(count + 1)}>Generate Diseases</button>
+      <button onClick={clickHandler}>Generate Diseases</button>
+
       <Body />
       <Form />
       <Articles />
-      <Results />
       <Other1 />
       <Other2 />
       <Other3 />
