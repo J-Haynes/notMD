@@ -37,6 +37,7 @@ function Form({ onSubmit }: Props) {
     <form onSubmit={handleSubmit}>
       <img src="/images/funny-hand.jpg" alt="hand-haha" />
       <div className="form-div">
+        <h1 className="">What are your symptoms?</h1>
         <div className={valid ? '' : 'invalid'}>
           <label htmlFor="primary" className={valid ? '' : 'invalid'}>
             Primary Symptom:{' '}
