@@ -76,7 +76,7 @@ form {
   display: flex;
   max-width: 80vw;
   height: 50vh;
-  padding: 5vw 10vw;  
+  padding: 5vh 10vw;  
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -104,8 +104,14 @@ form img {
   color: red;
 }
 
+.blue {
+  color: #113551;
+}
+
 .row {
+  display: flex;
   font-family: 'Roboto Condensed', sans-serif;
+  justify-content: space-evenly
 }
 
 .row a {
@@ -114,6 +120,33 @@ form img {
 
 .row a:hover {
   color: #0078c2;
+}
+
+.column {
+  display: block;
+  width: 250px;
+  margin: 20px;
+}
+
+.column img{
+  width: 250px;
+  height: auto;
+}
+
+form input {
+  height: 35px;
+}
+
+.small {
+  font-size: smaller;
+}
+
+.line {
+  border-top: #09223b 1px solid;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 4vh;
+  margin-bottom: 5vh
 }
 
 .button-18 {

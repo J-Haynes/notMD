@@ -1,6 +1,7 @@
 function Articles() {
   return (
     <>
+      <div className="line"></div>
       <div className="row">
         <div className="column">
           <img
