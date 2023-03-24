@@ -14,10 +14,10 @@ function Nav() {
         </div>
         <NavLink to="/">Home</NavLink>
         <p>Conditions</p>
-        <p>
+        <NavLink to="/supplements">
           Drugs & <br />
           Supplements
-        </p>
+        </NavLink>
         <p>Well-Being</p>
         <p>
           Symptom <br />
