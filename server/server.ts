@@ -52,4 +52,8 @@ server.get('/affirmations', (req, res) => {
     })
 })
 
+server.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '/public/index.html'))
+})
+
 export default server
