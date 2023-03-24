@@ -10,7 +10,9 @@ export default function Results({ disease, affirmation, onReset }: Props) {
       <div>
         <h2>You have {disease}.</h2>
         <p>{affirmation}</p>
-        <button onClick={onReset}>Get a new diagnosis</button>
+        <button className="button-18" onClick={onReset}>
+          Get a new diagnosis
+        </button>
       </div>
     </>
   )
