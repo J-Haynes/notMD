@@ -135,9 +135,82 @@ export default function Conditions() {
       </p>
       <br></br>
       <br></br>
+      <h2>Spontaneous Dental Hydroplosion</h2>
+      <br></br>
+      <p>
+        A disease that makes one&apos;s teeth turn into liquid and then drip
+        down one&apos;s throat.
+      </p>
+      <br></br>
+      <br></br>
       <h2>Synaptic Seepage</h2>
       <br></br>
-      <p></p>
+      <p>
+        Caused by downloading too much information into the brain. Causes data
+        corruption.
+      </p>
+      <br></br>
+      <br></br>
+      <h2>The Filth</h2>
+      <br></br>
+      <p>
+        A biological weapon willed into existence by the Dreamers in their
+        attempts to free themselves from captivity, it manifests in a variety of
+        forms, including poisonous gas, parasitic fungi, radio waves, and even
+        words. The most common variant takes the form of a viscous black fluid.
+        Exposure to the Filth results in nightmares, respiratory difficulties,
+        paranoia, delusions, violent behavior, and eventual insanity; mutations
+        gradually set in, resulting in victims manifesting glowing red eyes,
+        tentacles, and exuding Filth from their skin.{' '}
+      </p>
+      <br></br>
+      <br></br>
+      <h2>The Suds</h2>
+      <br></br>
+      <p>
+        The Suds is an illness that only sponges can catch, causing constant
+        sneezing of bubbles and whitened skin tone. It is essentially a common
+        cold. The Suds can be cured by washing the sponge and using it to clean
+        various things, as shown in the episode "The Suds."
+      </p>
+      <br></br>
+      <br></br>
+      <h2>Tooba-Achoobas</h2>
+      <br></br>
+      <p>
+        Plant-based illness similar to a cold, but with the bizarre side-effect
+        of the affected person losing their superpowers until cured.
+      </p>
+      <br></br>
+      <br></br>
+      <h2>Unicornitis</h2>
+      <br></br>
+      <p>
+        Symptoms include a bright pink unicorn horn magically sprouting from the
+        forehead, and the ability to fly. The only known cure is to purchase and
+        use a set of jet-skis.{' '}
+      </p>
+      <br></br>
+      <br></br>
+      <h2>Wexler&apos;s Curtain</h2>
+      <br></br>
+      <p>
+        Extraterrestrial spores resembling armored worms that mimic other cells
+        in a foreign organism helping the host. If the host is deceased the
+        spores will proceed to revive the organism, however use of the spores
+        results with unreasonable anger.
+      </p>
+      <br></br>
+      <br></br>
+      <h2>Xenopolycythemia</h2>
+      <br></br>
+      <p>
+        A disease that spread in Cantha, causing those affected to become
+        hulking, aggressive, pained creatures known as &apos;the
+        afflicted&apos;.
+      </p>
+      <br></br>
+      <br></br>
     </>
   )
 }
