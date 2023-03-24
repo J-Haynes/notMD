@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { getDiseases, getWordDone } from '../apiClient'
 import Articles from './Articles'
 import Body from './Body'
@@ -15,7 +15,6 @@ const App = () => {
   const [disease, setDiseases] = useState('')
   const [affirmation, setAffirmation] = useState('')
   const [isError, setIsError] = useState(false)
-  const [showResult, setShowResult] = useState(false)
 
   const getFeedback = (symptoms: FormData) => {
     getDiseases()
@@ -23,6 +22,7 @@ const App = () => {
         setDiseases(disease)
       })
       .catch((err) => {
+        console.log(err.message)
         setIsError(true)
       })
     getWordDone()
@@ -30,29 +30,36 @@ const App = () => {
         setAffirmation(affirmation.affirmation)
       })
       .catch((err) => {
+        console.log(err.message)
         setIsError(true)
       })
   }
 
-  const clickHandler = () => {
-    setShowResult(true)
-    setCount(count + 1)
+  const clearFeedback = () => {
+    setAffirmation('')
+    setDiseases('')
   }
 
   return (
     <>
       <Nav />
-      {disease !== '' && <h1>{disease}</h1>}
-      {showResult && <Results />}
       {isError && (
         <p style={{ color: 'red' }}>
-          There was an error retrieving the greeting.
+          There was an error retrieving some information.
         </p>
       )}
-      <button onClick={clickHandler}>Generate Diseases</button>
 
       <Body />
-      <Form />
+      {disease && affirmation ? (
+        <Results
+          disease={disease}
+          affirmation={affirmation}
+          onReset={clearFeedback}
+        />
+      ) : (
+        <Form onSubmit={getFeedback} />
+      )}
+
       <Articles />
       <Other1 />
       <Other2 />
