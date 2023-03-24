@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 function Footer() {
   return (
     <footer>
@@ -6,10 +8,12 @@ function Footer() {
         <a href="https://google.com">See more Info</a>
       </div>
       <div className="title">
-        <h1>
-          <i>not</i>
-          <strong>MD</strong>
-        </h1>
+        <NavLink to="/">
+          <h1>
+            <i>not</i>
+            <strong>MD</strong>
+          </h1>
+        </NavLink>
       </div>
     </footer>
   )
